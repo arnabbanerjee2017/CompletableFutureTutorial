@@ -5,6 +5,7 @@ import java.util.concurrent.ExecutionException;
 
 public class Main {
 	public static void main(String[] args) {
+		long startTime = System.currentTimeMillis();
 		CompletableFuture<String> cFuture = new CompletableFuture<String>();
 		String result = null;
 		try {
@@ -27,5 +28,8 @@ public class Main {
 			e.printStackTrace();
 		}
 		System.out.println(result);
+		long endTime = System.currentTimeMillis();
+		long timeTaken = endTime - startTime;
+		System.out.println("Time taken: " + timeTaken);
 	}
 }
